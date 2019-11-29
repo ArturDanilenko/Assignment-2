@@ -227,7 +227,7 @@ public:
 	void getTires(string make, int size, int quantity) {
 		newtires = store.getNewTires(make, size, quantity);
 	}
-	void ServiceCar(Car car) {
+	Car ServiceCar(Car car) {
 
 		getOil("Extra Good", 100);
 		item.cost = 777;
@@ -293,6 +293,7 @@ public:
 			sheet.addItem(litem);
 		}
 		cout << "DONE\n";
+		return car;
 	}
 };
 
@@ -316,6 +317,6 @@ int main() {
 	cout << "Service starts\n";
 
 	Technician tech;
-	tech.ServiceCar(car);
+	car = tech.ServiceCar(car);
 	cout << "DONE FOR ALL\n";
 }
